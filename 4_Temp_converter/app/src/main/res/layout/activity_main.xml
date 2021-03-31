@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center|top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textDoC"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="@color/white"
+                android:text="Độ C"
+                android:textColor="#111"
+                android:textSize="25dp"></TextView>
+
+            <Button
+                android:id="@+id/buttonHoanDoi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:backgroundTint="#97DDE6"
+                android:padding="8dp"
+                android:text="Hoán đổi"></Button>
+
+            <TextView
+                android:id="@+id/textDoF"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="3dp"
+                android:text="Độ F"
+                android:textColor="#111"
+                android:textSize="25dp"></TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextDoC"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:background="@drawable/duongvien"
+                android:gravity="center"
+                android:numeric="decimal"
+                android:textSize="25dp"></EditText>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:text="="
+                android:textSize="47dp"></TextView>
+
+            <EditText
+                android:id="@+id/editTextDoF"
+                android:layout_width="150dp"
+                android:layout_height="120dp"
+                android:layout_marginLeft="7dp"
+                android:background="@drawable/duongvien"
+                android:focusable="false"
+                android:gravity="center"
+                android:textSize="25dp"></EditText>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center|top"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonChuyenDoi"
+                android:layout_width="wrap_content"
+                android:layout_height="55dp"
+                android:backgroundTint="#FB6333"
+                android:text="Chuyển Đổi"
+                android:textSize="17dp"></Button>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/duongvien_lichsu"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/textLichSu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Lịch Sử"
+                    android:textColor="#3EA4D3"
+                    android:textSize="22dp"></TextView>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_marginTop="5dp"
+    android:padding="4dp"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <TextView
+        android:text="Đơn Hàng Của Bạn"
+        android:textSize="28dp"
+        android:textColor="#03A9F4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></TextView>
+    <View
+        android:layout_marginTop="12dp"
+        android:background="#00BCD4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></View>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="Món:  Toco Pronto"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:text="Size:  A"
+            android:id="@+id/textSize"
+            android:textSize="20dp"
+            android:layout_marginTop="7dp"
+            android:textColor="#111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:text="Tortilla:  B"
+            android:id="@+id/textTortilla"
+            android:textSize="20dp"
+            android:layout_marginTop="7dp"
+            android:textColor="#111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:text="Fillings:  C"
+            android:id="@+id/textFillings"
+            android:textSize="20dp"
+            android:layout_marginTop="7dp"
+            android:textColor="#111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        <TextView
+            android:text="Beverage:  D"
+            android:id="@+id/textBeverage"
+            android:textSize="20dp"
+            android:layout_marginTop="7dp"
+            android:textColor="#111"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="12dp"
+        android:background="#00BCD4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"></View>
+
+    <Button
+        android:text="Đặt Hàng"
+        android:id="@+id/buttonDatHang"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#00BCD4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+
+</LinearLayout>
