@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.a1_food_order_via_sms"
+        applicationId "com.example.food_order"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1

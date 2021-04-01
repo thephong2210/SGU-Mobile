@@ -37,15 +37,14 @@ public class MainActivity2 extends AppCompatActivity {
         textBeverage.setText("-Beverage:  "+ MainActivity.Beverage);
         s2 = textBeverage.getText().toString() +"\n";
 
-        if(MainActivity.Fillings =="") { //cách 1, nên dùng cách 2
+        if(MainActivity.Fillings =="") {
             s1="";
             textFillings.setVisibility(View.GONE); // Khi không có giá trị thì ẩn đi
         }
 
-        if(MainActivity.Beverage.length()==0) {  //cách 2
+        if(MainActivity.Beverage.length()==0) {
             s2="";
             textBeverage.setVisibility(View.GONE);
-
         }
 
         buttonDatHang.setOnClickListener(new View.OnClickListener() {

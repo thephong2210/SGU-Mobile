@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         icon_vitri = findViewById(R.id.icon_vitri);
         textTenMon = findViewById(R.id.textTenMon);
 
-//        checkbox_Fillings_Beef = findViewById(R.id.checkbox_Fillings_Beef);
+        checkbox_Fillings_Beef = findViewById(R.id.checkbox_Fillings_Beef);
         checkbox_Fillings_Chicken = findViewById(R.id.checkbox_Fillings_Chicken);
         checkbox_Fillings_WhiteFish = findViewById(R.id.checkbox_Fillings_WhiteFish);
         checkbox_Fillings_Chesse = findViewById(R.id.checkbox_Fillings_Chesse);
@@ -88,13 +88,13 @@ public class MainActivity extends AppCompatActivity {
                 // radio Size
                 radioGroupSize = findViewById(R.id.radioGroupSize);
                 int idSize= radioGroupSize.getCheckedRadioButtonId(); // lấy id của radioButton đã được chọn trong radioGroup
-                    if(idSize==-1) {
+                    if(idSize==-1) {  // k chọn thì =-1, chọn radioButton thứ nhất thì =1, thứ 2 thì =2...
                         Toast.makeText(MainActivity.this, "Bạn chưa chọn Size", Toast.LENGTH_LONG).show();
                         return;
                     }
                 radioButtonSize = findViewById(idSize);
                 Size = radioButtonSize.getText().toString();
-
+                
                 // radio Tortilla
                 radioGroupTortilla = findViewById(R.id.radioGroupTortilla);
                 int idTortilla= radioGroupTortilla.getCheckedRadioButtonId();
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                 // Các checkbox
-                if (findViewById(R.id.checkbox_Fillings_Beef).isClickable())
+                if (checkbox_Fillings_Beef.isChecked())
                     Fillings = Fillings + checkbox_Fillings_Beef.getText().toString() +", ";
                 if (checkbox_Fillings_Chicken.isChecked())
                     Fillings = Fillings + checkbox_Fillings_Chicken.getText().toString() +", ";
