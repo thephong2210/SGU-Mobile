@@ -1,8 +1,7 @@
-package com.example.money_change;
+package com.example.changemoney;
 
 import android.util.Log;
 
-import org.w3c.dom.CharacterData;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -18,51 +17,46 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class XMLDOMParser {
-    public Document getDocument(String xml) {
+    public Document getDocument(String xml)
+    {
         Document document = null;
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        try {
+        try{
             DocumentBuilder db = factory.newDocumentBuilder();
             InputSource is = new InputSource();
             is.setCharacterStream(new StringReader(xml));
             is.setEncoding("UTF-8");
             document = db.parse(is);
-        } catch (ParserConfigurationException e) {
+        }catch(ParserConfigurationException e)
+        {
             Log.e("Error: ", e.getMessage(), e);
             return null;
-        } catch (SAXException e) {
+        }
+        catch (SAXException e) {
             Log.e("Error: ", e.getMessage(), e);
             return null;
-        } catch (IOException e) {
+        }
+        catch(IOException e){
             Log.e("Error: ", e.getMessage(), e);
             return null;
         }
         return document;
     }
-
-    public String getValue(Element item, String name) {
+    public String getValue(Element item, String name)
+    {
         NodeList nodes = item.getElementsByTagName(name);
         return this.getTextNodeValue(nodes.item(0));
     }
-
     private final String getTextNodeValue(Node elem) {
         Node child;
-        if (elem != null) {
-            if (elem.hasChildNodes()) {
-                for (child = elem.getFirstChild(); child != null; child = child.getNextSibling()) {
-                    if (child.getNodeType() == Node.TEXT_NODE) {
+        if( elem != null){
+            if (elem.hasChildNodes()){
+                for( child = elem.getFirstChild(); child != null; child = child.getNextSibling() ){
+                    if( child.getNodeType() == Node.TEXT_NODE  ){
                         return child.getNodeValue();
                     }
                 }
             }
-        }
-        return "";
-    }
-    public final String getCharacterDataFromElement(Element e) {
-        Node child = e.getFirstChild();
-        if (child instanceof CharacterData) {
-            CharacterData cd = (CharacterData) child;
-            return cd.getData();
         }
         return "";
     }
