@@ -28,7 +28,7 @@ public class ShowContry extends AppCompatActivity {
         setContentView(R.layout.coutries);
         textViewarea = findViewById(R.id.textViewarea);
         textViewcountry_name = findViewById(R.id.textViewcountry_name);
-        textViewnational_flag = findViewById(R.id.textViewnational_flag);
+//        textViewnational_flag = findViewById(R.id.textViewnational_flag);
         textViewpopulation = findViewById(R.id.textViewpopulation);
         textViewcountry_name.append(MainActivity.namequocgia);
         textViewarea.append(MainActivity.areaInSqKm);
