@@ -31,7 +31,7 @@ public class ShowContry extends AppCompatActivity {
 //        textViewnational_flag = findViewById(R.id.textViewnational_flag);
         textViewpopulation = findViewById(R.id.textViewpopulation);
         textViewcountry_name.append(MainActivity.namequocgia);
-        textViewarea.append(MainActivity.areaInSqKm);
+        textViewarea.append(MainActivity.areaInSqKm+"  km²");
         textViewpopulation.append(MainActivity.population);
         imageViewQuocKi = findViewById(R.id.imageViewFlag);
 
