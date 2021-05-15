@@ -34,6 +34,7 @@ public class ShowContry extends AppCompatActivity {
         textViewarea.append(MainActivity.areaInSqKm+"  km²");
         textViewpopulation.append(MainActivity.population);
         imageViewQuocKi = findViewById(R.id.imageViewFlag);
+        
 
 
 

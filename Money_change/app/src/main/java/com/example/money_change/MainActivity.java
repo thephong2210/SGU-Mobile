@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
         dropdown2 = (Spinner) findViewById(R.id.spinner2);
         textView = findViewById(R.id.textViewtigia);
 
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrayList);
+
+
 
         new ReadHTML().execute("https://www.fxexchangerate.com/currency-converter-rss-feed.html");
 
@@ -82,12 +85,13 @@ public class MainActivity extends AppCompatActivity {
     public void creatDrop(int vt1, int vt2) {
 
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrayList);
         dropdown1.setAdapter(adapter);
         dropdown2.setAdapter(adapter);
 
         dropdown1.setSelection(vt1);
         dropdown2.setSelection(vt2);
+
+        adapter.notifyDataSetChanged();
 
 
     }
