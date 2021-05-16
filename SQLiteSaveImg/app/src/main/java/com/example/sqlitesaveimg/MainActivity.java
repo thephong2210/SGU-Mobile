@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Calendar calendar;
     PendingIntent pendingIntent;
     AlarmManager alarmManager;
+    static Bitmap hinhchon;
+
 
 
     @Override
@@ -34,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Nhắc nhở người dùng chụp ảnh định kì bằng notification
-        hengio(17, 25);
+        hengio(17, 0);
 
 
         buttonthem = findViewById(R.id.btthem);
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         buttonthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ThemHInhAnhActivity.hinhchon = null;
+                hinhchon = null;
 
                 startActivity(new Intent(MainActivity.this, ThemHInhAnhActivity.class));
             }
@@ -72,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // Chuyen byte[] --> bitmap
                 byte[] hinhAnh = arrayHinh.get(position).getHinh();
-                 ThemHInhAnhActivity.hinhchon = BitmapFactory.decodeByteArray(hinhAnh, 0, hinhAnh.length);
+                hinhchon = BitmapFactory.decodeByteArray(hinhAnh, 0, hinhAnh.length);
                 Intent intent = new Intent(MainActivity.this, XemHinh.class);
 
 
