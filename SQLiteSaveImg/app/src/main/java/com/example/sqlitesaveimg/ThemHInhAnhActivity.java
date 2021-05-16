@@ -16,10 +16,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.ByteArrayOutputStream;
 
 public class ThemHInhAnhActivity extends AppCompatActivity {
-    static Bitmap hinhchon;
     Button buttonCamera, buttonThem;
     ImageView imageViewCamera;
     int REQUEST_CODE_CAMERA = 123;
+    boolean flag= false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,6 @@ public class ThemHInhAnhActivity extends AppCompatActivity {
         setContentView(R.layout.activity_them_do_vat);
         Intent intent = getIntent();
         anhxa();
-        imageViewCamera.setImageBitmap(hinhchon);
 
         buttonCamera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +39,7 @@ public class ThemHInhAnhActivity extends AppCompatActivity {
         buttonThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (hinhchon == null) {
+                if (flag == false) {
                     Toast.makeText(ThemHInhAnhActivity.this, "Chua chụp hình mà thêm cái gì", Toast.LENGTH_SHORT).show();
                 } else {
                     // chuyễn data img --> byte[]
@@ -69,6 +68,8 @@ public class ThemHInhAnhActivity extends AppCompatActivity {
         if (requestCode == REQUEST_CODE_CAMERA && resultCode == RESULT_OK && data != null) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageViewCamera.setImageBitmap(bitmap);
+            flag =true;
+
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
