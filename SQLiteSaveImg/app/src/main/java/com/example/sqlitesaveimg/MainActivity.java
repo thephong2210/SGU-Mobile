@@ -5,7 +5,6 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
@@ -20,7 +19,6 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private static final String CHANNEL_ID = "123";
-    private static final int NOTIFICATION_ID = 1;
     public static Database database;
     Button buttonthem;
     ListView lvHinhAnh;
@@ -35,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // hen gio thong bao chup hinh moi ngay
-        hengio(12, 12);
+        // Nhắc nhở người dùng chụp ảnh định kì bằng notification
+        hengio(17, 25);
 
 
         buttonthem = findViewById(R.id.btthem);
@@ -62,20 +60,23 @@ public class MainActivity extends AppCompatActivity {
         buttonthem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ThemHInhAnhActivity.hinhchon = null;
 
-                startActivity(new Intent(MainActivity.this, ThemDoVatActivity.class));
+                startActivity(new Intent(MainActivity.this, ThemHInhAnhActivity.class));
             }
         });
 
         lvHinhAnh.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(MainActivity.this, ThemDoVatActivity.class));
 
                 // Chuyen byte[] --> bitmap
                 byte[] hinhAnh = arrayHinh.get(position).getHinh();
-                Bitmap bitmap = BitmapFactory.decodeByteArray(hinhAnh, 0, hinhAnh.length);
-                ThemDoVatActivity.imageViewCamera.setImageBitmap(bitmap);
+                 ThemHInhAnhActivity.hinhchon = BitmapFactory.decodeByteArray(hinhAnh, 0, hinhAnh.length);
+                Intent intent = new Intent(MainActivity.this, XemHinh.class);
+
+
+                startActivity(intent);
             }
         });
     }
@@ -94,6 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-}
 
+}
 

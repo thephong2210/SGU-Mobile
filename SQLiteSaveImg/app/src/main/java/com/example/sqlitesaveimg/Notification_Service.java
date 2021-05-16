@@ -13,12 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.core.app.NotificationManagerCompat;
 
 public class Notification_Service extends Service {
-    private NotificationManagerCompat notificationManagerCompat;
+//    private NotificationManagerCompat notificationManagerCompat;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        this.notificationManagerCompat = NotificationManagerCompat.from(this);
+//        this.notificationManagerCompat = NotificationManagerCompat.from(this);
 
     }
 
@@ -36,17 +36,16 @@ public class Notification_Service extends Service {
     }
 
 
-    private void sendNoti() {
+    private void sendNoti(){
 
         Notification notification = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.notification_vang)
-                .setContentTitle("Selfie")
-                .setContentText("Selfie làm bức hình nền ...")
                 .setSmallIcon(R.drawable.ic_launcher_background)
+                .setContentTitle("Hello")
+                .setContentText("Chụp ảnh nhé")
                 .build();
 
-        NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        if (notificationManager != null)
+        NotificationManager notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+        if(notificationManager !=null)
             notificationManager.notify(1, notification);
     }
 }
